@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class Daftarulangform
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,8 +22,11 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Dim GroupBox1 As GroupBox
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Daftarulangform))
+        CheckBox2 = New CheckBox()
+        CheckBox1 = New CheckBox()
+        Button4 = New Button()
         TextBox3 = New TextBox()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
@@ -36,18 +39,65 @@ Partial Class Form2
         Button3 = New Button()
         Button2 = New Button()
         Button1 = New Button()
-        Label12 = New Label()
         Label11 = New Label()
         Label10 = New Label()
         PictureBox1 = New PictureBox()
-        Button4 = New Button()
-        CheckBox1 = New CheckBox()
-        CheckBox2 = New CheckBox()
+        Label12 = New Label()
+        Button5 = New Button()
         GroupBox1 = New GroupBox()
+        GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        GroupBox1.SuspendLayout()
         SuspendLayout()
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.BackColor = SystemColors.Control
+        GroupBox1.Controls.Add(CheckBox2)
+        GroupBox1.Controls.Add(CheckBox1)
+        GroupBox1.Controls.Add(Button4)
+        GroupBox1.Controls.Add(TextBox3)
+        GroupBox1.Controls.Add(TextBox2)
+        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(Label8)
+        GroupBox1.Controls.Add(Label3)
+        GroupBox1.Controls.Add(Label4)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Location = New Point(410, 207)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(1233, 589)
+        GroupBox1.TabIndex = 6
+        GroupBox1.TabStop = False
+        ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoSize = True
+        CheckBox2.Location = New Point(507, 235)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(179, 36)
+        CheckBox2.TabIndex = 20
+        CheckBox2.Text = "Belum Bayar"
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoSize = True
+        CheckBox1.Location = New Point(281, 235)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(178, 36)
+        CheckBox1.TabIndex = 19
+        CheckBox1.Text = "Sudah Bayar"
+        CheckBox1.UseVisualStyleBackColor = True
+        ' 
+        ' Button4
+        ' 
+        Button4.Location = New Point(281, 304)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(219, 59)
+        Button4.TabIndex = 3
+        Button4.Text = "SIMPAN"
+        Button4.UseVisualStyleBackColor = True
         ' 
         ' TextBox3
         ' 
@@ -117,6 +167,7 @@ Partial Class Form2
         ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(Button5)
         GroupBox2.Controls.Add(Button3)
         GroupBox2.Controls.Add(Button2)
         GroupBox2.Controls.Add(Button1)
@@ -153,27 +204,15 @@ Partial Class Form2
         Button1.Text = "INPUT DATA CALON SISWA"
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label12.ImageAlign = ContentAlignment.MiddleLeft
-        Label12.Location = New Point(406, 108)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(461, 45)
-        Label12.TabIndex = 9
-        Label12.Text = "TAHUN AJARAN 2026/2027"
-        Label12.TextAlign = ContentAlignment.MiddleCenter
-        ' 
         ' Label11
         ' 
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label11.ImageAlign = ContentAlignment.MiddleLeft
-        Label11.Location = New Point(406, 63)
+        Label11.Location = New Point(410, 57)
         Label11.Name = "Label11"
         Label11.Size = New Size(567, 45)
-        Label11.TabIndex = 8
+        Label11.TabIndex = 19
         Label11.Text = "SD MUHAMMADIYAH GEMOLONG"
         Label11.TextAlign = ContentAlignment.MiddleCenter
         ' 
@@ -181,88 +220,60 @@ Partial Class Form2
         ' 
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label10.Location = New Point(406, 18)
+        Label10.Location = New Point(410, 12)
         Label10.Name = "Label10"
         Label10.Size = New Size(583, 45)
-        Label10.TabIndex = 7
+        Label10.TabIndex = 18
         Label10.Text = "SISTEM PENERIMAAN SISWA BARU"
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(205, 18)
+        PictureBox1.Location = New Point(240, 12)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(161, 135)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 11
+        PictureBox1.TabIndex = 21
         PictureBox1.TabStop = False
         ' 
-        ' GroupBox1
+        ' Label12
         ' 
-        GroupBox1.BackColor = SystemColors.Control
-        GroupBox1.Controls.Add(CheckBox2)
-        GroupBox1.Controls.Add(CheckBox1)
-        GroupBox1.Controls.Add(Button4)
-        GroupBox1.Controls.Add(TextBox3)
-        GroupBox1.Controls.Add(TextBox2)
-        GroupBox1.Controls.Add(TextBox1)
-        GroupBox1.Controls.Add(Label8)
-        GroupBox1.Controls.Add(Label3)
-        GroupBox1.Controls.Add(Label4)
-        GroupBox1.Controls.Add(Label2)
-        GroupBox1.Controls.Add(Label1)
-        GroupBox1.Location = New Point(410, 207)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(1233, 589)
-        GroupBox1.TabIndex = 6
-        GroupBox1.TabStop = False
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.ImageAlign = ContentAlignment.MiddleLeft
+        Label12.Location = New Point(410, 102)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(461, 45)
+        Label12.TabIndex = 22
+        Label12.Text = "TAHUN AJARAN 2026/2027"
+        Label12.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Button4
+        ' Button5
         ' 
-        Button4.Location = New Point(281, 304)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(219, 59)
-        Button4.TabIndex = 3
-        Button4.Text = "SIMPAN"
-        Button4.UseVisualStyleBackColor = True
+        Button5.Location = New Point(20, 524)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(158, 59)
+        Button5.TabIndex = 23
+        Button5.Text = "Logout"
+        Button5.UseVisualStyleBackColor = True
         ' 
-        ' CheckBox1
-        ' 
-        CheckBox1.AutoSize = True
-        CheckBox1.Location = New Point(281, 235)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(178, 36)
-        CheckBox1.TabIndex = 19
-        CheckBox1.Text = "Sudah Bayar"
-        CheckBox1.UseVisualStyleBackColor = True
-        ' 
-        ' CheckBox2
-        ' 
-        CheckBox2.AutoSize = True
-        CheckBox2.Location = New Point(507, 235)
-        CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(179, 36)
-        CheckBox2.TabIndex = 20
-        CheckBox2.Text = "Belum Bayar"
-        CheckBox2.UseVisualStyleBackColor = True
-        ' 
-        ' Form2
+        ' Daftarulangform
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1648, 814)
-        Controls.Add(GroupBox2)
         Controls.Add(Label12)
         Controls.Add(Label11)
         Controls.Add(Label10)
         Controls.Add(PictureBox1)
+        Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
-        Name = "Form2"
+        Name = "Daftarulangform"
         Text = "DAFTAR ULANG"
-        GroupBox2.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
+        GroupBox2.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -278,11 +289,12 @@ Partial Class Form2
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Button4 As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class
