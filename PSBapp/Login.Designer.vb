@@ -22,16 +22,15 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         GroupBox1 = New GroupBox()
-        PictureBox1 = New PictureBox()
-        Label1 = New Label()
-        Label2 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        CheckBox1 = New CheckBox()
-        Button1 = New Button()
         LinkLabel1 = New LinkLabel()
+        Button1 = New Button()
+        CheckBox1 = New CheckBox()
+        TextBox2 = New TextBox()
+        TextBox1 = New TextBox()
+        Label2 = New Label()
+        Label1 = New Label()
+        PictureBox1 = New PictureBox()
         GroupBox1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -46,91 +45,102 @@ Partial Class Login
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Controls.Add(PictureBox1)
-        GroupBox1.Location = New Point(296, 52)
+        GroupBox1.Location = New Point(159, 24)
+        GroupBox1.Margin = New Padding(2, 1, 2, 1)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(1088, 709)
+        GroupBox1.Padding = New Padding(2, 1, 2, 1)
+        GroupBox1.Size = New Size(586, 332)
         GroupBox1.TabIndex = 7
         GroupBox1.TabStop = False
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(480, 168)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(161, 135)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 6
-        PictureBox1.TabStop = False
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(261, 462)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(121, 32)
-        Label1.TabIndex = 7
-        Label1.Text = "Username"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(261, 524)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(111, 32)
-        Label2.TabIndex = 8
-        Label2.Text = "Password"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(414, 455)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(443, 39)
-        TextBox1.TabIndex = 9
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(414, 517)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(443, 39)
-        TextBox2.TabIndex = 10
-        ' 
-        ' CheckBox1
-        ' 
-        CheckBox1.AutoSize = True
-        CheckBox1.Font = New Font("Segoe UI", 6F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        CheckBox1.Location = New Point(706, 562)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(151, 27)
-        CheckBox1.TabIndex = 11
-        CheckBox1.Text = "Show Password"
-        CheckBox1.UseVisualStyleBackColor = True
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(480, 619)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(161, 57)
-        Button1.TabIndex = 12
-        Button1.Text = "Login"
-        Button1.UseVisualStyleBackColor = True
         ' 
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 6F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LinkLabel1.Location = New Point(414, 568)
+        LinkLabel1.Font = New Font("Segoe UI", 6.0F, FontStyle.Regular, GraphicsUnit.Point, 0)
+        LinkLabel1.Location = New Point(223, 266)
+        LinkLabel1.Margin = New Padding(2, 0, 2, 0)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(117, 21)
+        LinkLabel1.Size = New Size(62, 11)
         LinkLabel1.TabIndex = 13
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Buat Akun Baru"
         ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(258, 290)
+        Button1.Margin = New Padding(2, 1, 2, 1)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(87, 27)
+        Button1.TabIndex = 12
+        Button1.Text = "Login"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoSize = True
+        CheckBox1.Font = New Font("Segoe UI", 6.0F, FontStyle.Regular, GraphicsUnit.Point, 0)
+        CheckBox1.Location = New Point(380, 263)
+        CheckBox1.Margin = New Padding(2, 1, 2, 1)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(79, 15)
+        CheckBox1.TabIndex = 11
+        CheckBox1.Text = "Show Password"
+        CheckBox1.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(223, 242)
+        TextBox2.Margin = New Padding(2, 1, 2, 1)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(240, 23)
+        TextBox2.TabIndex = 10
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(223, 213)
+        TextBox1.Margin = New Padding(2, 1, 2, 1)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(240, 23)
+        TextBox1.TabIndex = 9
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(141, 246)
+        Label2.Margin = New Padding(2, 0, 2, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(57, 15)
+        Label2.TabIndex = 8
+        Label2.Text = "Password"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(141, 217)
+        Label1.Margin = New Padding(2, 0, 2, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(60, 15)
+        Label1.TabIndex = 7
+        Label1.Text = "Username"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.Screenshot_19_12_2025_214823_www_bing_com
+        PictureBox1.Location = New Point(249, 46)
+        PictureBox1.Margin = New Padding(2, 1, 2, 1)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(157, 143)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 6
+        PictureBox1.TabStop = False
+        ' 
         ' Login
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1648, 814)
+        ClientSize = New Size(887, 382)
         Controls.Add(GroupBox1)
+        Margin = New Padding(2, 1, 2, 1)
         Name = "Login"
         Text = "LOGIN"
         GroupBox1.ResumeLayout(False)

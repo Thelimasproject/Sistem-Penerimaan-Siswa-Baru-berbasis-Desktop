@@ -1,12 +1,12 @@
 ﻿Public Class Listform
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form1.Show()
+        Inputform.Show()
         Me.Hide()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Form2.Show()
+        Daftarulangform.Show()
         Me.Hide()
     End Sub
 
@@ -14,4 +14,8 @@
         MsgBox("Data direfresh")
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Login.Show()
+        Me.Hide()
+    End Sub
 End Class

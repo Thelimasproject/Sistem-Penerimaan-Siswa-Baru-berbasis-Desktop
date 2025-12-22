@@ -1,27 +1,153 @@
-﻿Public Class Inputform
+﻿Imports Org.BouncyCastle.Asn1.Cmp
+Imports MySql.Data.MySqlClient
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBox7.Items.Clear()
-        ComboBox7.Items.Add("Laki-laki")
-        ComboBox7.Items.Add("Perempuan")
+
+Public Class Inputform
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, cmbStatus.SelectedIndexChanged
+        cmbJK.Items.Clear()
+        cmbJK.Items.Add("L")
+        cmbJK.Items.Add("P")
+
+        cmbStatus.Items.Add("diterima")
+        cmbStatus.Items.Add("ditolak")
+        cmbStatus.Items.Add("proses")
+
     End Sub
 
     ' ===== MENU =====
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        TextBox1.Focus()
+        txtNama.Focus()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Form2.Show()
+        Daftarulangform.Show()
         Me.Hide()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Form3.Show
-        Hide
+        Listform.Show()
+        Hide()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Login.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnTest_Click(sender As Object, e As EventArgs) Handles BtnTest.Click
+        Try
+            Call BukaKoneksi()
+            MessageBox.Show("Koneksi ke database BERHASIL")
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Koneksi GAGAL: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BtnSimpan.Click
+        Dim trans As MySqlTransaction = Nothing
+        Dim nisBaru As Integer
+
+
+        Try
+            Call BukaKoneksi()
+            Dim sqlMax As String = "SELECT IFNULL(MAX(nis),0)+1 FROM siswa"
+            Using cmdMax As New MySqlCommand(sqlMax, conn)
+                nisBaru = Convert.ToInt32(cmdMax.ExecuteScalar())
+            End Using
+
+            Dim sql As String = "INSERT INTO siswa 
+        (nama_lengkap,nis, nik, tempat_lahir, tanggal_lahir, alamat, tinggi_badan, berat_badan, jenis_kelamin, agama, no_telepon,  Ayah_kandung, Ibu_kandung, Wali, Pekerjaan_ayah, Pekerjaan_ibu, Pekerjaan_wali )
+        VALUES
+        (@nama,@nis, @nik, @tempat, @tgl, @alamat, @tinggi, @berat, @jk, @agama, @no_telepon, @Ayah_kandung,@Ibu_kandung, @Wali, @Pekerjaan_ayah, @Pekerjaan_ibu, @Pekerjaan_wali )"
+
+            Using cmd As New MySqlCommand(sql, conn, trans)
+
+                cmd.Parameters.AddWithValue("@nama", txtNama.Text)
+                cmd.Parameters.AddWithValue("@nis", nisBaru)
+                cmd.Parameters.AddWithValue("@nik", txtNIK.Text)
+                cmd.Parameters.AddWithValue("@tempat", txtTempat.Text)
+                cmd.Parameters.AddWithValue("@tgl", dtpTanggal.Value)
+                cmd.Parameters.AddWithValue("@alamat", txtAlamat.Text)
+                cmd.Parameters.AddWithValue("@tinggi", txtTinggi.Text)
+                cmd.Parameters.AddWithValue("@berat", txtBerat.Text)
+                cmd.Parameters.AddWithValue("@jk", cmbJK.Text)
+                cmd.Parameters.AddWithValue("@agama", txtAgama.Text)
+                cmd.Parameters.AddWithValue("@no_telepon", txtNo_Telepon.Text)
+                cmd.Parameters.AddWithValue("@Ayah_kandung", txtAyah_kandung.Text)
+                cmd.Parameters.AddWithValue("@Ibu_kandung", txtIbu_kandung.Text)
+                cmd.Parameters.AddWithValue("@Wali", txtWali.Text)
+                cmd.Parameters.AddWithValue("@Pekerjaan_ayah", txtPekerjaan_Aah.Text)
+                cmd.Parameters.AddWithValue("@Pekerjaan_ibu", txtPekerjaan_ibu.Text)
+                cmd.Parameters.AddWithValue("@Pekerjaan_wali", txtPekerjaan_wali.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+
+            ' ================= INSERT TABEL PENDAFTARAN =================
+            Dim sqlDaftar As String = "INSERT INTO pendaftaran 
+    ( tanggal_pendaftaran, status)
+    VALUES
+    ( @tgl_daftar, @status)"
+
+            Using cmdDaftar As New MySqlCommand(sqlDaftar, conn, trans)
+
+                cmdDaftar.Parameters.AddWithValue("@tgl_daftar", Date.Now)
+                cmdDaftar.Parameters.AddWithValue("@status", cmbStatus.Text)
+
+                cmdDaftar.ExecuteNonQuery()
+            End Using
+            MessageBox.Show("Data berhasil disimpan")
+
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpTanggal.ValueChanged
+
+    End Sub
+
+    Private Sub cmbStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStatus.SelectedIndexChanged, cmbStatus.StyleChanged
+
+
+
+    End Sub
+
+    Private Sub cmbStatus_DragEnter(sender As Object, e As DragEventArgs)
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ComboBox7_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbJK.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtNIK.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtNama.TextChanged
+
+    End Sub
+
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles txtBerat.TextChanged, txtAgama.TextChanged, txtNo_Telepon.TextChanged, txtAyah_kandung.TextChanged, txtIbu_kandung.TextChanged, txtWali.TextChanged, txtPekerjaan_Aah.TextChanged, txtPekerjaan_ibu.TextChanged, txtPekerjaan_wali.TextChanged
+
+    End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click, Label19.Click, Label20.Click, Label21.Click, Label22.Click
+
+    End Sub
+
+    Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
 
     End Sub
 End Class
