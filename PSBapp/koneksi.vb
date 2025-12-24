@@ -5,7 +5,7 @@ Module Koneksi
 
     Public Sub BukaKoneksi()
         conn = New MySqlConnection(
-            "server=localhost;user id=root;password=;database=db_sekolah"
+            "server=localhost;port=4306;user id=root;password=;database=db_sekolah"
         )
 
         If conn.State = ConnectionState.Closed Then

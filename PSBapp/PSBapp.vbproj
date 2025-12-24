@@ -15,8 +15,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="3.7.12" />
     <PackageReference Include="MySql.Data" Version="9.5.0" />
     <PackageReference Include="MySqlConnector" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.5\MySql.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
