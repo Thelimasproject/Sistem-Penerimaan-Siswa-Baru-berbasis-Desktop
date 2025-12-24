@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 23, 2025 at 11:51 AM
+-- Host: 127.0.0.1:4306
+-- Generation Time: Dec 24, 2025 at 05:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,6 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pendaftaran` (
+  `nama_lengkap` varchar(64) NOT NULL,
+  `nik` varchar(20) NOT NULL,
   `no_pendaftaran` int(8) NOT NULL,
   `tanggal_pendaftaran` date NOT NULL,
   `status` enum('diterima','ditolak','proses') NOT NULL
@@ -37,34 +39,9 @@ CREATE TABLE `pendaftaran` (
 -- Dumping data for table `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`no_pendaftaran`, `tanggal_pendaftaran`, `status`) VALUES
-(2, '2025-12-06', ''),
-(3, '2025-12-06', ''),
-(4, '2025-12-22', ''),
-(5, '2025-12-18', 'ditolak'),
-(6, '2025-12-18', 'ditolak'),
-(7, '2025-12-23', ''),
-(8, '2025-12-23', 'diterima'),
-(9, '2025-12-23', 'ditolak'),
-(10, '2025-12-23', ''),
-(11, '2025-12-23', ''),
-(12, '2025-12-23', 'proses'),
-(13, '2025-12-23', ''),
-(14, '2025-12-23', ''),
-(15, '2025-12-23', ''),
-(16, '2025-12-23', ''),
-(17, '2025-12-23', ''),
-(18, '2025-12-23', ''),
-(19, '2025-12-23', ''),
-(20, '2025-12-23', ''),
-(21, '2025-12-23', ''),
-(22, '2025-12-23', ''),
-(23, '2025-12-23', ''),
-(24, '2025-12-23', ''),
-(25, '2025-12-23', ''),
-(26, '2025-12-23', ''),
-(27, '2025-12-23', ''),
-(28, '2025-12-23', 'ditolak');
+INSERT INTO `pendaftaran` (`nama_lengkap`, `nik`, `no_pendaftaran`, `tanggal_pendaftaran`, `status`) VALUES
+('muhammad al fatih', '7744', 4, '2025-12-09', 'diterima'),
+('Muhammad Izul Mubarok', '7743', 35, '2025-12-17', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -98,29 +75,8 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id`, `nis`, `nama_lengkap`, `nik`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `agama`, `no_telepon`, `ayah_kandung`, `ibu_kandung`, `wali`, `pekerjaan_ayah`, `pekerjaan_ibu`, `pekerjaan_wali`, `berat_badan`, `tinggi_badan`) VALUES
-(1, 0, 'muhammad afif', '312342344', '', 'jawa ', '2025-09-09', 'jawa', '', '', '', '', '', '', '', '', 45, 178),
-(2, 0, 'muhammad izzul mubarrok', '312310820', '', 'pekalongan', '2001-01-23', 'Karawang', '', '', '', '', '', '', '', '', 70, 170),
-(3, 0, 'dinda', '123', '', 'rawabinog', '2025-12-22', 'rawajalu', 'islam', '44563465', 'bpk', 'ui', 'ds', 'es', 'fe', 'esf', 566, 234),
-(4, 0, 'stgfs', '0', '', 'jgjg', '2025-03-22', 'gjg', 'gy', '7897', 'ata', 'ada', 'ada', 'ada', 'ada', 'ad', 0, 0),
-(6, 0, 'stgfs', '3123', '', 'jgjg', '2025-03-22', 'gjg', 'gy', '7897', 'ata', 'ada', 'ada', 'ada', 'ada', 'ad', 0, 0),
-(8, 0, 'stgfs', '312', '', 'jgjg', '2025-03-22', 'gjg', 'gy', '7897', 'ata', 'ada', 'ada', 'ada', 'ada', 'ad', 0, 0),
-(10, 0, 'dinda', '23444455', '', 'pekalongan', '2001-03-04', 'pekalongan', 'islam', '0823212212', 'ayah', 'ibu', 'kake', 'kerja', 'kerja', 'kerja', 51, 156),
-(24, 3, 'Muhammad izzul mubarrok', '77443', 'L', 'Pekalongan', '2025-12-23', 'Karawang', 'Islam', '', 'bapak', 'ibu', 'wali', 'kerja', 'kerja', 'kerja', 70, 170),
-(32, 5, 'muhammad al fatih', '356778391', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(35, 6, 'muhammad al f', '2147483647', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(36, 7, '', '312353566', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(39, 8, '', '2311112', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(41, 9, '', '23116', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(42, 10, '', '2311689', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(43, 11, '', '231168990', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(48, 12, '', '231168956', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(49, 13, '', '343452378', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(50, 14, '', '34345999', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(52, 15, '', '635482813', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(53, 16, '', '23421124235233', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(54, 17, '', '352465467475686965', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(55, 1128, 'eedad', '142351454135', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0),
-(56, 2239, 'muhammad izzul mubarrok', '31231278909', 'L', 'pekalongan', '2000-11-25', 'karawang', 'islam', '98676585', 'ayah', 'ibu', 'kakek', 'kerja', 'kerja', 'kerja', 67, 170);
+(24, 3, 'Muhammad izul mubarok', '7743', 'L', 'Pekalongan', '2025-12-23', 'Karawang', 'Islam', '', 'bapak', 'ibu', 'wali', 'kerja', 'kerja', 'kerja', 70, 170),
+(32, 5, 'muhammad al fatih', '7744', '', '', '2025-12-23', '', '', '', '', '', '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -166,13 +122,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `no_pendaftaran` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `no_pendaftaran` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `user`
