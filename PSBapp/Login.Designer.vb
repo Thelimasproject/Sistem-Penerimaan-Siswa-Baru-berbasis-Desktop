@@ -23,6 +23,7 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         GroupBox1 = New GroupBox()
+        btnRegister = New Button()
         Button1 = New Button()
         CheckBox1 = New CheckBox()
         TextBox2 = New TextBox()
@@ -36,6 +37,7 @@ Partial Class Login
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(btnRegister)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Controls.Add(CheckBox1)
         GroupBox1.Controls.Add(TextBox2)
@@ -47,13 +49,22 @@ Partial Class Login
         GroupBox1.Margin = New Padding(3, 2, 3, 2)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(3, 2, 3, 2)
-        GroupBox1.Size = New Size(837, 553)
+        GroupBox1.Size = New Size(837, 599)
         GroupBox1.TabIndex = 7
         GroupBox1.TabStop = False
         ' 
+        ' btnRegister
+        ' 
+        btnRegister.Location = New Point(393, 503)
+        btnRegister.Name = "btnRegister"
+        btnRegister.Size = New Size(124, 45)
+        btnRegister.TabIndex = 8
+        btnRegister.Text = "Register"
+        btnRegister.UseVisualStyleBackColor = True
+        ' 
         ' Button1
         ' 
-        Button1.Location = New Point(369, 483)
+        Button1.Location = New Point(393, 447)
         Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
         Button1.Size = New Size(124, 45)
@@ -141,4 +152,5 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnRegister As Button
 End Class
