@@ -4,14 +4,46 @@ Imports MySql.Data.MySqlClient
 
 Public Class Inputform
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, cmbStatus.SelectedIndexChanged
-        cmbJK.Items.Clear()
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmbJK.Items.Clear
         cmbJK.Items.Add("L")
         cmbJK.Items.Add("P")
 
-        cmbStatus.Items.Add("diterima")
-        cmbStatus.Items.Add("ditolak")
-        cmbStatus.Items.Add("proses")
+
+
+        cmbagm.Items.Clear()
+        cmbagm.Items.Add("Islam")
+        cmbagm.Items.Add("Kristen")
+        cmbagm.Items.Add("Katolik")
+        cmbagm.Items.Add("Hindu")
+        cmbagm.Items.Add("Buddha")
+        cmbagm.Items.Add("konghucu")
+
+        cmbAyah.Items.Clear()
+        cmbAyah.Items.Add("Petani")
+        cmbAyah.Items.Add("Wiraswasta")
+        cmbAyah.Items.Add("PNS")
+        cmbAyah.Items.Add("Guru")
+        cmbAyah.Items.Add("Dokter")
+        cmbAyah.Items.Add("Buruh")
+        cmbAyah.Items.Add("Lain-lain")
+
+        cmbIbu.Items.Clear()
+        cmbIbu.Items.Add("Ibu Rumah Tangga")
+        cmbIbu.Items.Add("Wiraswasta")
+        cmbIbu.Items.Add("PNS")
+        cmbIbu.Items.Add("Guru")
+        cmbIbu.Items.Add("Dokter")
+        cmbIbu.Items.Add("Buruh")
+        cmbIbu.Items.Add("Lain-lain")
+
+        cmbWali.Items.Clear()
+        cmbWali.Items.Add("Wiraswasta")
+        cmbWali.Items.Add("PNS")
+        cmbWali.Items.Add("Guru")
+        cmbWali.Items.Add("Dokter")
+        cmbWali.Items.Add("Buruh")
+        cmbWali.Items.Add("Lain-lain")
 
     End Sub
 
@@ -77,14 +109,14 @@ Public Class Inputform
                 cmd.Parameters.AddWithValue("@tinggi", txtTinggi.Text)
                 cmd.Parameters.AddWithValue("@berat", txtBerat.Text)
                 cmd.Parameters.AddWithValue("@jk", cmbJK.Text)
-                cmd.Parameters.AddWithValue("@agama", txtAgama.Text)
+                cmd.Parameters.AddWithValue("@agama", cmbagm.Text)
                 cmd.Parameters.AddWithValue("@no_telepon", txtNo_Telepon.Text)
                 cmd.Parameters.AddWithValue("@Ayah_kandung", txtAyah_kandung.Text)
                 cmd.Parameters.AddWithValue("@Ibu_kandung", txtIbu_kandung.Text)
                 cmd.Parameters.AddWithValue("@Wali", txtWali.Text)
-                cmd.Parameters.AddWithValue("@Pekerjaan_ayah", txtPekerjaan_Aah.Text)
-                cmd.Parameters.AddWithValue("@Pekerjaan_ibu", txtPekerjaan_ibu.Text)
-                cmd.Parameters.AddWithValue("@Pekerjaan_wali", txtPekerjaan_wali.Text)
+                cmd.Parameters.AddWithValue("@Pekerjaan_ayah", cmbAyah.Text)
+                cmd.Parameters.AddWithValue("@Pekerjaan_ibu", cmbIbu.Text)
+                cmd.Parameters.AddWithValue("@Pekerjaan_wali", cmbWali.Text)
                 cmd.ExecuteNonQuery()
             End Using
 
@@ -97,7 +129,7 @@ Public Class Inputform
             Using cmdDaftar As New MySqlCommand(sqlDaftar, conn, trans)
 
                 cmdDaftar.Parameters.AddWithValue("@tgl_daftar", Date.Now)
-                cmdDaftar.Parameters.AddWithValue("@status", cmbStatus.Text)
+
 
                 cmdDaftar.ExecuteNonQuery()
             End Using
@@ -113,7 +145,7 @@ Public Class Inputform
 
     End Sub
 
-    Private Sub cmbStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStatus.SelectedIndexChanged, cmbStatus.StyleChanged
+    Private Sub cmbStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
 
 
 
@@ -127,7 +159,7 @@ Public Class Inputform
 
     End Sub
 
-    Private Sub ComboBox7_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbJK.SelectedIndexChanged
+    Private Sub ComboBox7_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbJK.SelectedIndexChanged, cmbagm.SelectedIndexChanged
 
     End Sub
 
@@ -139,11 +171,11 @@ Public Class Inputform
 
     End Sub
 
-    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles txtBerat.TextChanged, txtAgama.TextChanged, txtNo_Telepon.TextChanged, txtAyah_kandung.TextChanged, txtIbu_kandung.TextChanged, txtWali.TextChanged, txtPekerjaan_Aah.TextChanged, txtPekerjaan_ibu.TextChanged, txtPekerjaan_wali.TextChanged
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles txtBerat.TextChanged, txtNo_Telepon.TextChanged, txtAyah_kandung.TextChanged, txtIbu_kandung.TextChanged, txtWali.TextChanged
 
     End Sub
 
-    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click, Label19.Click, Label20.Click, Label21.Click, Label22.Click
+    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click, Label19.Click, Label20.Click, Label22.Click
 
     End Sub
 

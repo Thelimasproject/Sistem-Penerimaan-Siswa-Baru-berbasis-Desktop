@@ -24,18 +24,14 @@ Partial Class Inputform
     Private Sub InitializeComponent()
         Dim bobobox As GroupBox
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inputform))
-        cmbStatus = New ComboBox()
+        dtpPendaftaran = New DateTimePicker()
         dtpTanggal = New DateTimePicker()
         BtnSimpan = New Button()
         BtnTest = New Button()
-        txtPekerjaan_wali = New TextBox()
-        txtPekerjaan_ibu = New TextBox()
-        txtPekerjaan_Aah = New TextBox()
         txtWali = New TextBox()
         txtIbu_kandung = New TextBox()
         txtAyah_kandung = New TextBox()
         txtNo_Telepon = New TextBox()
-        txtAgama = New TextBox()
         txtBerat = New TextBox()
         txtTinggi = New TextBox()
         txtAlamat = New TextBox()
@@ -44,7 +40,7 @@ Partial Class Inputform
         txtNama = New TextBox()
         Label14 = New Label()
         Label18 = New Label()
-        Label21 = New Label()
+        Label22 = New Label()
         Label20 = New Label()
         Label19 = New Label()
         Label17 = New Label()
@@ -52,6 +48,10 @@ Partial Class Inputform
         Label15 = New Label()
         Label13 = New Label()
         Label9 = New Label()
+        cmbWali = New ComboBox()
+        cmbIbu = New ComboBox()
+        cmbAyah = New ComboBox()
+        cmbagm = New ComboBox()
         cmbJK = New ComboBox()
         Label8 = New Label()
         Label7 = New Label()
@@ -70,8 +70,6 @@ Partial Class Inputform
         Label12 = New Label()
         Label11 = New Label()
         Label10 = New Label()
-        Label22 = New Label()
-        dtpPendaftaran = New DateTimePicker()
         bobobox = New GroupBox()
         bobobox.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -81,19 +79,14 @@ Partial Class Inputform
         ' bobobox
         ' 
         bobobox.BackColor = SystemColors.Control
-        bobobox.Controls.Add(cmbStatus)
         bobobox.Controls.Add(dtpPendaftaran)
         bobobox.Controls.Add(dtpTanggal)
         bobobox.Controls.Add(BtnSimpan)
         bobobox.Controls.Add(BtnTest)
-        bobobox.Controls.Add(txtPekerjaan_wali)
-        bobobox.Controls.Add(txtPekerjaan_ibu)
-        bobobox.Controls.Add(txtPekerjaan_Aah)
         bobobox.Controls.Add(txtWali)
         bobobox.Controls.Add(txtIbu_kandung)
         bobobox.Controls.Add(txtAyah_kandung)
         bobobox.Controls.Add(txtNo_Telepon)
-        bobobox.Controls.Add(txtAgama)
         bobobox.Controls.Add(txtBerat)
         bobobox.Controls.Add(txtTinggi)
         bobobox.Controls.Add(txtAlamat)
@@ -102,7 +95,6 @@ Partial Class Inputform
         bobobox.Controls.Add(txtNama)
         bobobox.Controls.Add(Label14)
         bobobox.Controls.Add(Label18)
-        bobobox.Controls.Add(Label21)
         bobobox.Controls.Add(Label22)
         bobobox.Controls.Add(Label20)
         bobobox.Controls.Add(Label19)
@@ -111,6 +103,10 @@ Partial Class Inputform
         bobobox.Controls.Add(Label15)
         bobobox.Controls.Add(Label13)
         bobobox.Controls.Add(Label9)
+        bobobox.Controls.Add(cmbWali)
+        bobobox.Controls.Add(cmbIbu)
+        bobobox.Controls.Add(cmbAyah)
+        bobobox.Controls.Add(cmbagm)
         bobobox.Controls.Add(cmbJK)
         bobobox.Controls.Add(Label8)
         bobobox.Controls.Add(Label7)
@@ -128,14 +124,12 @@ Partial Class Inputform
         bobobox.TabIndex = 0
         bobobox.TabStop = False
         ' 
-        ' cmbStatus
+        ' dtpPendaftaran
         ' 
-        cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList
-        cmbStatus.FormattingEnabled = True
-        cmbStatus.Location = New Point(151, 473)
-        cmbStatus.Name = "cmbStatus"
-        cmbStatus.Size = New Size(117, 23)
-        cmbStatus.TabIndex = 25
+        dtpPendaftaran.Location = New Point(151, 422)
+        dtpPendaftaran.Name = "dtpPendaftaran"
+        dtpPendaftaran.Size = New Size(499, 23)
+        dtpPendaftaran.TabIndex = 24
         ' 
         ' dtpTanggal
         ' 
@@ -161,30 +155,6 @@ Partial Class Inputform
         BtnTest.TabIndex = 4
         BtnTest.Text = "Test Koneksi"
         BtnTest.UseVisualStyleBackColor = True
-        ' 
-        ' txtPekerjaan_wali
-        ' 
-        txtPekerjaan_wali.Location = New Point(151, 395)
-        txtPekerjaan_wali.Margin = New Padding(2, 1, 2, 1)
-        txtPekerjaan_wali.Name = "txtPekerjaan_wali"
-        txtPekerjaan_wali.Size = New Size(499, 23)
-        txtPekerjaan_wali.TabIndex = 22
-        ' 
-        ' txtPekerjaan_ibu
-        ' 
-        txtPekerjaan_ibu.Location = New Point(151, 370)
-        txtPekerjaan_ibu.Margin = New Padding(2, 1, 2, 1)
-        txtPekerjaan_ibu.Name = "txtPekerjaan_ibu"
-        txtPekerjaan_ibu.Size = New Size(499, 23)
-        txtPekerjaan_ibu.TabIndex = 22
-        ' 
-        ' txtPekerjaan_Aah
-        ' 
-        txtPekerjaan_Aah.Location = New Point(151, 344)
-        txtPekerjaan_Aah.Margin = New Padding(2, 1, 2, 1)
-        txtPekerjaan_Aah.Name = "txtPekerjaan_Aah"
-        txtPekerjaan_Aah.Size = New Size(499, 23)
-        txtPekerjaan_Aah.TabIndex = 22
         ' 
         ' txtWali
         ' 
@@ -217,14 +187,6 @@ Partial Class Inputform
         txtNo_Telepon.Name = "txtNo_Telepon"
         txtNo_Telepon.Size = New Size(499, 23)
         txtNo_Telepon.TabIndex = 22
-        ' 
-        ' txtAgama
-        ' 
-        txtAgama.Location = New Point(151, 219)
-        txtAgama.Margin = New Padding(2, 1, 2, 1)
-        txtAgama.Name = "txtAgama"
-        txtAgama.Size = New Size(499, 23)
-        txtAgama.TabIndex = 22
         ' 
         ' txtBerat
         ' 
@@ -294,15 +256,15 @@ Partial Class Inputform
         Label18.TabIndex = 15
         Label18.Text = "wali"
         ' 
-        ' Label21
+        ' Label22
         ' 
-        Label21.AutoSize = True
-        Label21.Location = New Point(0, 481)
-        Label21.Margin = New Padding(2, 0, 2, 0)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(39, 15)
-        Label21.TabIndex = 15
-        Label21.Text = "Status"
+        Label22.AutoSize = True
+        Label22.Location = New Point(-2, 430)
+        Label22.Margin = New Padding(2, 0, 2, 0)
+        Label22.Name = "Label22"
+        Label22.Size = New Size(115, 15)
+        Label22.TabIndex = 15
+        Label22.Text = "Tanggal pendaftaran"
         ' 
         ' Label20
         ' 
@@ -373,6 +335,42 @@ Partial Class Inputform
         Label9.Size = New Size(78, 15)
         Label9.TabIndex = 15
         Label9.Text = "Jenis Kelamin"
+        ' 
+        ' cmbWali
+        ' 
+        cmbWali.FormattingEnabled = True
+        cmbWali.Location = New Point(151, 395)
+        cmbWali.Margin = New Padding(2, 1, 2, 1)
+        cmbWali.Name = "cmbWali"
+        cmbWali.Size = New Size(499, 23)
+        cmbWali.TabIndex = 14
+        ' 
+        ' cmbIbu
+        ' 
+        cmbIbu.FormattingEnabled = True
+        cmbIbu.Location = New Point(151, 370)
+        cmbIbu.Margin = New Padding(2, 1, 2, 1)
+        cmbIbu.Name = "cmbIbu"
+        cmbIbu.Size = New Size(499, 23)
+        cmbIbu.TabIndex = 14
+        ' 
+        ' cmbAyah
+        ' 
+        cmbAyah.FormattingEnabled = True
+        cmbAyah.Location = New Point(151, 344)
+        cmbAyah.Margin = New Padding(2, 1, 2, 1)
+        cmbAyah.Name = "cmbAyah"
+        cmbAyah.Size = New Size(499, 23)
+        cmbAyah.TabIndex = 14
+        ' 
+        ' cmbagm
+        ' 
+        cmbagm.FormattingEnabled = True
+        cmbagm.Location = New Point(151, 219)
+        cmbagm.Margin = New Padding(2, 1, 2, 1)
+        cmbagm.Name = "cmbagm"
+        cmbagm.Size = New Size(499, 23)
+        cmbagm.TabIndex = 14
         ' 
         ' cmbJK
         ' 
@@ -565,23 +563,6 @@ Partial Class Inputform
         Label10.TabIndex = 1
         Label10.Text = "SISTEM PENERIMAAN SISWA BARU"
         ' 
-        ' Label22
-        ' 
-        Label22.AutoSize = True
-        Label22.Location = New Point(-2, 430)
-        Label22.Margin = New Padding(2, 0, 2, 0)
-        Label22.Name = "Label22"
-        Label22.Size = New Size(115, 15)
-        Label22.TabIndex = 15
-        Label22.Text = "Tanggal pendaftaran"
-        ' 
-        ' dtpPendaftaran
-        ' 
-        dtpPendaftaran.Location = New Point(151, 422)
-        dtpPendaftaran.Name = "dtpPendaftaran"
-        dtpPendaftaran.Size = New Size(499, 23)
-        dtpPendaftaran.TabIndex = 24
-        ' 
         ' Inputform
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -645,24 +626,22 @@ Partial Class Inputform
     Friend WithEvents BtnTest As Button
     Friend WithEvents BtnSimpan As Button
     Friend WithEvents dtpTanggal As DateTimePicker
-    Friend WithEvents cmbStatus As ComboBox
     Friend WithEvents txtAyah_kandung As TextBox
     Friend WithEvents txtNo_Telepon As TextBox
-    Friend WithEvents txtAgama As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents txtPekerjaan_Aah As TextBox
     Friend WithEvents txtWali As TextBox
     Friend WithEvents txtIbu_kandung As TextBox
-    Friend WithEvents txtPekerjaan_wali As TextBox
-    Friend WithEvents txtPekerjaan_ibu As TextBox
-    Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents dtpPendaftaran As DateTimePicker
     Friend WithEvents Label22 As Label
+    Friend WithEvents cmbagm As ComboBox
+    Friend WithEvents cmbWali As ComboBox
+    Friend WithEvents cmbIbu As ComboBox
+    Friend WithEvents cmbAyah As ComboBox
 End Class
