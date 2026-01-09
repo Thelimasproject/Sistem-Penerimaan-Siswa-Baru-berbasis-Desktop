@@ -25,7 +25,7 @@ Partial Class Login
         GroupBox1 = New GroupBox()
         btnRegister = New Button()
         Button1 = New Button()
-        CheckBox1 = New CheckBox()
+        chkShow = New CheckBox()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
         Label2 = New Label()
@@ -39,103 +39,107 @@ Partial Class Login
         ' 
         GroupBox1.Controls.Add(btnRegister)
         GroupBox1.Controls.Add(Button1)
-        GroupBox1.Controls.Add(CheckBox1)
+        GroupBox1.Controls.Add(chkShow)
         GroupBox1.Controls.Add(TextBox2)
         GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Controls.Add(PictureBox1)
-        GroupBox1.Location = New Point(227, 40)
-        GroupBox1.Margin = New Padding(3, 2, 3, 2)
+        GroupBox1.Location = New Point(159, 24)
+        GroupBox1.Margin = New Padding(2, 1, 2, 1)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(3, 2, 3, 2)
-        GroupBox1.Size = New Size(837, 599)
+        GroupBox1.Padding = New Padding(2, 1, 2, 1)
+        GroupBox1.Size = New Size(586, 359)
         GroupBox1.TabIndex = 7
         GroupBox1.TabStop = False
         ' 
         ' btnRegister
         ' 
-        btnRegister.Location = New Point(393, 503)
+        btnRegister.Location = New Point(275, 302)
+        btnRegister.Margin = New Padding(2)
         btnRegister.Name = "btnRegister"
-        btnRegister.Size = New Size(124, 45)
+        btnRegister.Size = New Size(87, 27)
         btnRegister.TabIndex = 8
         btnRegister.Text = "Register"
         btnRegister.UseVisualStyleBackColor = True
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(393, 447)
-        Button1.Margin = New Padding(3, 2, 3, 2)
+        Button1.Location = New Point(275, 268)
+        Button1.Margin = New Padding(2, 1, 2, 1)
         Button1.Name = "Button1"
-        Button1.Size = New Size(124, 45)
+        Button1.Size = New Size(87, 27)
         Button1.TabIndex = 12
         Button1.Text = "Login"
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' CheckBox1
+        ' chkShow
         ' 
-        CheckBox1.AutoSize = True
-        CheckBox1.Font = New Font("Segoe UI", 6F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        CheckBox1.Location = New Point(543, 438)
-        CheckBox1.Margin = New Padding(3, 2, 3, 2)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(115, 21)
-        CheckBox1.TabIndex = 11
-        CheckBox1.Text = "Show Password"
-        CheckBox1.UseVisualStyleBackColor = True
+        chkShow.AutoSize = True
+        chkShow.Font = New Font("Segoe UI", 6F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        chkShow.Location = New Point(380, 263)
+        chkShow.Margin = New Padding(2, 1, 2, 1)
+        chkShow.Name = "chkShow"
+        chkShow.Size = New Size(79, 15)
+        chkShow.TabIndex = 11
+        chkShow.Text = "Show Password"
+        chkShow.UseVisualStyleBackColor = True
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(319, 403)
-        TextBox2.Margin = New Padding(3, 2, 3, 2)
+        TextBox2.Location = New Point(223, 242)
+        TextBox2.Margin = New Padding(2, 1, 2, 1)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(341, 31)
+        TextBox2.Size = New Size(240, 23)
         TextBox2.TabIndex = 10
+        TextBox2.UseSystemPasswordChar = True
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(319, 355)
-        TextBox1.Margin = New Padding(3, 2, 3, 2)
+        TextBox1.Location = New Point(223, 213)
+        TextBox1.Margin = New Padding(2, 1, 2, 1)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(341, 31)
+        TextBox1.Size = New Size(240, 23)
         TextBox1.TabIndex = 9
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(201, 410)
+        Label2.Location = New Point(141, 246)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(87, 25)
+        Label2.Size = New Size(57, 15)
         Label2.TabIndex = 8
         Label2.Text = "Password"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(201, 362)
+        Label1.Location = New Point(141, 217)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(91, 25)
+        Label1.Size = New Size(60, 15)
         Label1.TabIndex = 7
         Label1.Text = "Username"
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.Screenshot_19_12_2025_214823_www_bing_com
-        PictureBox1.Location = New Point(356, 77)
-        PictureBox1.Margin = New Padding(3, 2, 3, 2)
+        PictureBox1.Location = New Point(249, 46)
+        PictureBox1.Margin = New Padding(2, 1, 2, 1)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(224, 238)
+        PictureBox1.Size = New Size(157, 143)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 6
         PictureBox1.TabStop = False
         ' 
         ' Login
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1267, 637)
+        ClientSize = New Size(887, 382)
         Controls.Add(GroupBox1)
-        Margin = New Padding(3, 2, 3, 2)
+        Margin = New Padding(2, 1, 2, 1)
         Name = "Login"
         Text = "LOGIN"
         GroupBox1.ResumeLayout(False)
@@ -145,12 +149,12 @@ Partial Class Login
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents chkShow As CheckBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents btnRegister As Button
+    Private WithEvents TextBox2 As TextBox
 End Class

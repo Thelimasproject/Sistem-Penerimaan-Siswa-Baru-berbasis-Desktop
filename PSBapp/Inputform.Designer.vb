@@ -27,7 +27,6 @@ Partial Class Inputform
         dtpPendaftaran = New DateTimePicker()
         dtpTanggal = New DateTimePicker()
         BtnSimpan = New Button()
-        BtnTest = New Button()
         txtWali = New TextBox()
         txtIbu_kandung = New TextBox()
         txtAyah_kandung = New TextBox()
@@ -82,7 +81,6 @@ Partial Class Inputform
         bobobox.Controls.Add(dtpPendaftaran)
         bobobox.Controls.Add(dtpTanggal)
         bobobox.Controls.Add(BtnSimpan)
-        bobobox.Controls.Add(BtnTest)
         bobobox.Controls.Add(txtWali)
         bobobox.Controls.Add(txtIbu_kandung)
         bobobox.Controls.Add(txtAyah_kandung)
@@ -146,15 +144,6 @@ Partial Class Inputform
         BtnSimpan.TabIndex = 23
         BtnSimpan.Text = "save"
         BtnSimpan.UseVisualStyleBackColor = True
-        ' 
-        ' BtnTest
-        ' 
-        BtnTest.Location = New Point(342, 472)
-        BtnTest.Name = "BtnTest"
-        BtnTest.Size = New Size(116, 23)
-        BtnTest.TabIndex = 4
-        BtnTest.Text = "Test Koneksi"
-        BtnTest.UseVisualStyleBackColor = True
         ' 
         ' txtWali
         ' 
@@ -623,7 +612,6 @@ Partial Class Inputform
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Button4 As Button
-    Friend WithEvents BtnTest As Button
     Friend WithEvents BtnSimpan As Button
     Friend WithEvents dtpTanggal As DateTimePicker
     Friend WithEvents txtAyah_kandung As TextBox

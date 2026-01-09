@@ -71,17 +71,51 @@ Public Class Inputform
         Me.Hide()
     End Sub
 
-    Private Sub BtnTest_Click(sender As Object, e As EventArgs) Handles BtnTest.Click
+    Private Sub BtnTest_Click(sender As Object, e As EventArgs)
         Try
-            Call BukaKoneksi()
+            BukaKoneksi
             MessageBox.Show("Koneksi ke database BERHASIL")
-            conn.Close()
+            conn.Close
         Catch ex As Exception
             MessageBox.Show("Koneksi GAGAL: " & ex.Message)
         End Try
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BtnSimpan.Click
+        If txtNama.Text.Trim = "" Then
+            MessageBox.Show("Nama lengkap wajib diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtNama.Focus()
+            Exit Sub
+        End If
+
+        ' Validasi NIK
+        If txtNIK.Text.Trim = "" Then
+            MessageBox.Show("NIK wajib diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtNIK.Focus()
+            Exit Sub
+        End If
+
+        ' Validasi Tempat Lahir
+        If txtTempat.Text.Trim = "" Then
+            MessageBox.Show("Tempat lahir wajib diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtTempat.Focus()
+            Exit Sub
+        End If
+
+        ' Validasi Jenis Kelamin
+        If cmbJK.SelectedIndex = -1 Then
+            MessageBox.Show("Silakan pilih jenis kelamin!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            cmbJK.Focus()
+            Exit Sub
+        End If
+
+        ' Validasi Agama
+        If cmbagm.SelectedIndex = -1 Then
+            MessageBox.Show("Silakan pilih agama!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            cmbagm.Focus()
+            Exit Sub
+        End If
+
         Dim trans As MySqlTransaction = Nothing
         Dim nisBaru As Integer
 
@@ -126,10 +160,12 @@ Public Class Inputform
     VALUES
     ( @tgl_daftar, @status)"
 
+
+
             Using cmdDaftar As New MySqlCommand(sqlDaftar, conn, trans)
 
                 cmdDaftar.Parameters.AddWithValue("@tgl_daftar", Date.Now)
-
+                cmdDaftar.Parameters.AddWithValue("@status", "proses")
 
                 cmdDaftar.ExecuteNonQuery()
             End Using
